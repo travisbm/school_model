@@ -5,3 +5,26 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+school_names = ['Iron Yard', 'Steel Yard', 'Aluminum Yard', 'Copper Yard', 'Chrome Yard']
+
+course_names = ['Rails', 'iOS', 'Cobal', 'Fourtran', 'C++', 'Java']
+
+school_names.each do |school|
+
+  school.courses.build({
+    course_name: course_names.sample
+    })
+
+  3.times do
+    school.teachers.build({
+      first_name: Faker::Name.first_name
+      last_name:  Faker::Name.first_name
+      })
+  end
+
+  school.students.build({
+    first_name: Faker::Name.first_name
+    last_name:  Faker::Name.first_name
+    })
+
+end
