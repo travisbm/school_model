@@ -15,25 +15,26 @@ school_names.each do |school_name|
       school_name: school_name
       })
 
-
   3.times do
     school.teachers.build({
-      first_name: Faker::Name.first_name
+      first_name: Faker::Name.first_name,
       last_name:  Faker::Name.first_name
       })
   end
 
   school.teachers.each do |teacher|
+
     10.times do
       teacher.students.build({
-        first_name: Faker::Name.first_name
+        first_name: Faker::Name.first_name,
         last_name:  Faker::Name.first_name
         })
+
+    teacher.build_course({
+      course_name: course_names.sample
+    })
     end
 
-    teacher.course.build({
-      course_name: course_names.sample
-      })
   end
 
 end
