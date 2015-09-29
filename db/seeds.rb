@@ -9,11 +9,12 @@ school_names = ['Iron Yard', 'Steel Yard', 'Aluminum Yard', 'Copper Yard', 'Chro
 
 course_names = ['Rails', 'iOS', 'Cobal', 'Fourtran', 'C++', 'Java']
 
-school_names.each do |school|
+school_names.each do |school_name|
 
-  school.courses.build({
-    course_name: course_names.sample
-    })
+  school = School.new({
+      school_name: school_name
+      })
+
 
   3.times do
     school.teachers.build({
@@ -22,9 +23,17 @@ school_names.each do |school|
       })
   end
 
-  school.students.build({
-    first_name: Faker::Name.first_name
-    last_name:  Faker::Name.first_name
-    })
+  school.teachers.each do |teacher|
+    10.times do
+      teacher.students.build({
+        first_name: Faker::Name.first_name
+        last_name:  Faker::Name.first_name
+        })
+    end
+
+    teacher.course.build({
+      course_name: course_names.sample
+      })
+  end
 
 end
