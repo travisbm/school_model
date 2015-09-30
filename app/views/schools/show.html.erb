@@ -11,7 +11,7 @@
 </p>
 
 <p>
-  <strong><%= link_to 'Students:', 'show_students.html.erb' %></strong>
+  <strong><%= link_to 'Students:' %></strong>
   <% student_count = 0 %>
   <% @school.teachers.each do |teacher| %>
   <% student_count += teacher.students.count %>

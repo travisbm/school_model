@@ -6,7 +6,19 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+
+<body class='container'>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo right">Code School</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><%= link_to 'Schools', schools_path %></li>
+        <li><%= link_to 'Courses', courses_path %></li>
+        <li><%= link_to 'Teachers', teachers_path %></li>
+        <li><%= link_to 'Students', students_path %></li>
+      </ul>
+    </div>
+  </nav>
 
 <%= yield %>
 

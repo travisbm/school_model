@@ -7,7 +7,12 @@
 
 <p>
   <strong>School:</strong>
-  <%= @course.School %>
+  <%= @course.teacher.school.school_name %>
+</p>
+
+<p>
+  <strong>Teacher:</strong>
+  <%= @course.teacher.full_name(@course.teacher) %>
 </p>
 
 <%= link_to 'Edit', edit_course_path(@course) %> |
