@@ -12,7 +12,7 @@
 
 <p>
   <strong>School:</strong>
-  <%= @student.school %>
+  <%= @student.teacher.school.school_name %>
 </p>
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
