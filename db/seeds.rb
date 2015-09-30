@@ -34,7 +34,7 @@ school_names.each do |school_name|
       course_name: course_names.sample
     })
     end
-
   end
 
+school.save!
 end
