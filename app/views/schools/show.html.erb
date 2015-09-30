@@ -6,12 +6,12 @@
 </p>
 
 <p>
-  <strong>Teachers:</strong>
+  <strong><%= link_to 'Teachers:' %></strong>
   <%= @school.teachers.count %>
 </p>
 
 <p>
-  <strong>Students:</strong>
+  <strong><%= link_to 'Students:', 'show_students.html.erb' %></strong>
   <% student_count = 0 %>
   <% @school.teachers.each do |teacher| %>
   <% student_count += teacher.students.count %>
@@ -41,6 +41,29 @@
         <td><%= teacher.first_name %></td>
         <td><%= teacher.last_name %></td>
       </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h2>Listing Students</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @school.teachers.each do |teacher| %>
+      <% teacher.students.each do |teacher| %>
+        <tr>
+          <td><%= teacher.first_name %></td>
+          <td><%= teacher.last_name %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
