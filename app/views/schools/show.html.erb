@@ -5,6 +5,25 @@
   <%= @school.school_name %>
 </p>
 
+<p>
+  <strong>Teachers:</strong>
+  <%= @school.teachers.count %>
+</p>
+
+<p>
+  <strong>Students:</strong>
+  <% student_count = 0 %>
+  <% @school.teachers.each do |teacher| %>
+  <% student_count += teacher.students.count %>
+  <% end %>
+  <%= student_count %>
+</p>
+
+<p>
+  <strong>Courses:</strong>
+  <%= @school.teachers.count %>
+</p>
+
 <h2>Listing Teachers</h2>
 
 <table>
